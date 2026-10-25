@@ -1,5 +1,8 @@
 # Frame by Frame — portfolio
 
+**Live site:** https://asishj1.github.io/portfolio/  
+**Repository:** https://github.com/Asishj1/portfolio
+
 A complete static video editing and motion portfolio, designed for GitHub Pages. Working identity: **Frame by Frame**. The creator’s actual name and contact details have not been supplied.
 
 ## Preview

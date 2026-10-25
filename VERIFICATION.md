@@ -21,7 +21,10 @@
 - System reduced-motion behavior is implemented through CSS and matchMedia and was source-reviewed. No OS setting emulation, screen reader audit, automated accessibility audit, Lighthouse run, or live mobile device test was performed.
 - Placeholder films do not include authored caption/transcript tracks. Add appropriate accessible media alternatives with the creator’s real project content before a full accessibility claim.
 - Initial unavailable Google sample links were replaced with packaged, attributed Blender trailers; those broken links are absent from the final site.
-- GitHub Actions execution and public URL verification await repository setup and authenticated publishing. A local preview is not proof of a public deployment.
+- The site was deployed on GitHub Pages and opened at https://asishj1.github.io/portfolio/. First deployment: https://github.com/Asishj1/portfolio/actions/runs/40228613120 (success).
+- Live browser checks confirmed CGI filtering, project dialog opening, and native playback of `assets/sintel-trailer.mp4` (playing true; readyState 4). Hero image loaded and the live page had no horizontal overflow or console errors. Hero parallax produced a nonzero computed transform during scrolling.
+- A public repository clone was compared against all 20 local source and media files: every file matched exactly at the initial deployment.
+- The initial workflow emitted a Node runtime deprecation warning. It was updated to supported official action releases and a stable Ubuntu 24.04 runner; final run https://github.com/Asishj1/portfolio/actions/runs/40228784275 succeeded in 1m 26s using commit `fa5eb389616405cbcdce3138ff2c759c03dede00`.
 
 ## Content status
 
