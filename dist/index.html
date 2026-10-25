@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edeee6">
+  <meta name="description" content="An independent video editing and motion graphics portfolio. Explore editing, CGI, AI, explainers, and motion design. Preview includes clearly labeled demonstration media.">
+  <title>Frame by Frame — Video & Motion Portfolio</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./content.js" defer></script><script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#work">Skip to work</a>
+  <div class="grain" aria-hidden="true"></div><div class="cursor" aria-hidden="true">PLAY ↗</div>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Frame by Frame home"><span class="mark" aria-hidden="true">f<span>f</span></span><span>FRAME<br>BY FRAME<span class="brand-note">A PORTFOLIO IN MOTION</span></span></a>
+    <nav aria-label="Main navigation"><a href="#work">Work <span>↗</span></a><a href="#about">Approach <span>↗</span></a><a href="#contact" class="nav-contact">Let’s talk <span>↗</span></a></nav>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-meta"><span><i class="live-dot"></i> VIDEO EDITING & MOTION DESIGN</span><span class="edition">PORTFOLIO / VOL. 01 — 2026</span></div>
+      <h1 id="hero-title">Every frame.<br><span class="second-line">A little <em>feeling.</em><span class="asterisk" aria-hidden="true">✳</span></span></h1>
+      <div class="hero-bottom"><p>Moving images. Lasting impressions.<br>Editing, motion & a different way of seeing.</p><a class="round-link" href="#work"><span>EXPLORE THE WORK</span><span class="round-arrow" aria-hidden="true">↘</span></a></div>
+      <button class="reel media-trigger" data-reel aria-label="Play demonstration reel">
+        <img class="reel-image" src="./assets/hero.jpg" alt="" width="1600" height="800" fetchpriority="high">
+        <span class="reel-shade"></span><span class="viewfinder corner-tl" aria-hidden="true"></span><span class="viewfinder corner-tr" aria-hidden="true"></span><span class="viewfinder corner-bl" aria-hidden="true"></span><span class="viewfinder corner-br" aria-hidden="true"></span>
+        <span class="reel-top"><span><i class="rec-dot"></i> DEMO REEL</span><span>16:9 / SOUND ON PLAY</span></span>
+        <span class="reel-title">A different<br><em>perspective.</em></span><span class="play-disc" aria-hidden="true">▶</span>
+        <span class="reel-bottom"><span>PLACEHOLDER FOOTAGE · NOT ORIGINAL WORK</span><span>PRESS PLAY ↗</span></span>
+      </button>
+      <div class="reel-caption"><span>01 / THE OPENING FRAME</span><span>SCROLL TO FIND YOUR NEXT FAVORITE FRAME ↓</span></div>
+    </section>
+    <div class="ticker" aria-hidden="true"><div>EDITING <b>✳</b> MOTION DESIGN <b>✳</b> CGI <b>✳</b> VISUAL STORYTELLING <b>✳</b> EDITING <b>✳</b> MOTION DESIGN <b>✳</b> CGI <b>✳</b> VISUAL STORYTELLING <b>✳</b></div></div>
+    <section class="work section-pad" id="work" aria-labelledby="work-title">
+      <div class="section-kicker"><span>01 — THE WORK</span><span>AN EXPLORATION IN SIX DIRECTIONS</span></div>
+      <div class="section-heading"><h2 id="work-title">Less ordinary.<br><em>More memorable.</em></h2><p>From the first cut to the final detail.<br>Explore the different sides of motion.</p></div>
+      <div class="filter-bar" role="group" aria-label="Filter projects by category"></div>
+      <div class="work-status"><span><i class="live-dot"></i> DEMO GALLERY · PLACEHOLDERS ONLY</span><span id="result-count" role="status" aria-live="polite"></span></div>
+      <div class="project-grid" id="project-grid"></div>
+      <button class="load-more" id="load-more">EXPLORE ALL 29 DEMO SLOTS <span>↗</span></button>
+      <p class="content-note">A preview of what’s to come. All titles, artwork & videos in this gallery are illustrative placeholders, not client projects. Category totals represent the planned portfolio.</p>
+      <noscript><p>This interactive gallery needs JavaScript. The downloadable content manifest lists all 29 planned project slots.</p></noscript>
+    </section>
+    <section class="about section-pad" id="about" aria-labelledby="about-title">
+      <div class="section-kicker"><span>02 — THE APPROACH</span><span>CRAFT OVER NOISE</span></div>
+      <div class="about-layout"><div class="about-visual" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><span class="about-star">✳</span><span class="visual-label">A LITTLE INTENTION.<br>A LOT OF FEELING.</span><span class="visual-number">F / 01</span></div><div class="about-copy"><h2 id="about-title">The cut matters.<br><em>The feeling stays.</em></h2><p>Good motion has a rhythm. A pause that holds your attention. A transition that feels inevitable. A detail you notice on the second watch.</p><p>This portfolio is built around that idea: make every frame earn its place.</p><div class="approach-tags"><span>01 / EDIT</span><span>02 / EXPERIMENT</span><span>03 / REFINE</span></div></div></div>
+    </section>
+    <section class="contact section-pad" id="contact" aria-labelledby="contact-title"><div class="section-kicker"><span>03 — THE NEXT FRAME</span><span>GOOD THINGS START WITH A CONVERSATION</span></div><h2 id="contact-title">Have a story?<br><em>Let’s move it.</em><span aria-hidden="true">↗</span></h2><div class="contact-bottom"><p>A new idea. An unfinished edit. A bold direction.<br>There’s always a next frame.</p><button id="contact-button" class="contact-button">LET’S MAKE SOMETHING <span>↗</span></button></div><p class="contact-note" id="contact-note">Preview mode — contact details will be added before launch.</p></section>
+  </main>
+  <footer><a class="footer-logo" href="#top">FRAME BY FRAME<span>© <span id="year">2026</span></span></a><span>INDEPENDENT IN SPIRIT. FRAME BY FRAME.</span><div><button id="motion-toggle" aria-pressed="false">MOTION: ON</button><a href="#top">BACK TO TOP ↑</a></div></footer>
+  <dialog id="project-dialog" aria-labelledby="dialog-title"><button class="close-dialog" aria-label="Close project">CLOSE ✕</button><div class="dialog-kicker" id="dialog-category"></div><h2 id="dialog-title"></h2><video id="project-video" controls playsinline preload="none"></video><p id="video-fallback" hidden>The preview couldn’t load. <a id="video-direct" href="#" target="_blank" rel="noopener">Open the sample video directly ↗</a></p><p id="dialog-description"></p><p class="video-credit" id="video-credit"></p><div class="dialog-bottom"><span>DEMONSTRATION MEDIA · NOT ORIGINAL PORTFOLIO WORK</span><button id="next-project">NEXT PREVIEW ↗</button></div></dialog>
+</body>
+</html>
