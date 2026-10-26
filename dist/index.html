@@ -1,36 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#edeee6">
+  <meta name="theme-color" content="#101410">
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') === 'light' ? 'light' : 'dark'; } catch (_) {}
+    document.querySelector('meta[name="theme-color"]').content = document.documentElement.dataset.theme === 'dark' ? '#101410' : '#edeee6';
+  </script>
   <meta name="description" content="An independent video editing and motion graphics portfolio. Explore editing, CGI, AI, explainers, and motion design. Preview includes clearly labeled demonstration media.">
   <title>Frame by Frame — Video & Motion Portfolio</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./style.css">
-  <script src="./content.js" defer></script><script src="./app.js" defer></script>
+  <link rel="stylesheet" href="./style.css?v=20261026-chroma2">
+  <script src="./content.js" defer></script><script src="./app.js?v=20261026-chroma2" defer></script>
 </head>
 <body>
   <a class="skip" href="#work">Skip to work</a>
   <div class="grain" aria-hidden="true"></div><div class="cursor" aria-hidden="true">PLAY ↗</div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <svg class="optical-filters" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+    <filter id="vertical-pull-1" x="-10%" y="-120%" width="120%" height="340%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="0.35 5" edgeMode="duplicate" result="smear"/><feOffset in="smear" dy="-1" result="pulled"/></filter>
+    <filter id="vertical-pull-2" x="-10%" y="-120%" width="120%" height="340%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="0.35 10" edgeMode="duplicate" result="smear"/><feOffset in="smear" dy="-3" result="pulled"/></filter>
+    <filter id="vertical-pull-3" x="-10%" y="-120%" width="120%" height="340%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="0.35 18" edgeMode="duplicate" result="smear"/><feOffset in="smear" dy="-6" result="pulled"/></filter>
+    <filter id="vertical-pull-4" x="-10%" y="-120%" width="120%" height="340%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="0.35 27" edgeMode="duplicate" result="smear"/><feOffset in="smear" dy="-9" result="pulled"/></filter>
+    <filter id="vertical-pull-5" x="-10%" y="-120%" width="120%" height="340%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="0.35 38" edgeMode="duplicate" result="smear"/><feOffset in="smear" dy="-13" result="pulled"/></filter>
+  <filter id="lens-wide" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feImage href="./assets/lens-map-wide.png" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="lens-map"/><feDisplacementMap in="SourceGraphic" in2="lens-map" scale="30" xChannelSelector="R" yChannelSelector="G" result="refracted"/><feComposite in="refracted" in2="SourceGraphic" operator="over"/></filter><filter id="lens-panel" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feImage href="./assets/lens-map-panel.png" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="lens-map"/><feDisplacementMap in="SourceGraphic" in2="lens-map" scale="12" xChannelSelector="R" yChannelSelector="G" result="refracted"/><feComposite in="refracted" in2="SourceGraphic" operator="over"/></filter><filter id="lens-round" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feImage href="./assets/lens-map-round.png" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="lens-map"/><feDisplacementMap in="SourceGraphic" in2="lens-map" scale="8" xChannelSelector="R" yChannelSelector="G" result="refracted"/><feComposite in="refracted" in2="SourceGraphic" operator="over"/></filter><filter id="header-chromatic" x="-5%" y="-10%" width="110%" height="120%" color-interpolation-filters="sRGB">
+<feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="red"/><feOffset in="red" dx="1.8" dy="0.25" result="red-shift"/>
+<feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="green"/>
+<feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="blue"/><feOffset in="blue" dx="-1.8" dy="-0.25" result="blue-shift"/>
+<feBlend in="red-shift" in2="green" mode="screen" result="rg"/><feBlend in="rg" in2="blue-shift" mode="screen"/></filter></defs></svg>
   <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="Frame by Frame home"><span class="mark" aria-hidden="true">f<span>f</span></span><span>FRAME<br>BY FRAME<span class="brand-note">A PORTFOLIO IN MOTION</span></span></a>
-    <nav aria-label="Main navigation"><a href="#work">Work <span>↗</span></a><a href="#about">Approach <span>↗</span></a><a href="#contact" class="nav-contact">Let’s talk <span>↗</span></a></nav>
+    <div class="header-blur" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i class="header-chroma"></i></div>
+    <a class="wordmark" href="#top" aria-label="Frame by Frame home"><svg class="mark" viewBox="0 0 52 52" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 44V17C8 9 12 5 20 5h8v8h-7c-3 0-4 2-4 5v3h12v8H17v15Z"/><path fill="currentColor" d="M26 47V29c0-9 4-14 12-14h7v8h-6c-3 0-4 2-4 6v2h10v8H35v8Z"/></svg><span>FRAME<br>BY FRAME<span class="brand-note">A PORTFOLIO IN MOTION</span></span></a>
+    <nav aria-label="Main navigation"><a href="#work">Work <span>↗</span></a><a href="#about">Approach <span>↗</span></a><a href="#contact" class="nav-contact">Let’s talk <span>↗</span></a><button class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☼</span><span class="theme-label">Light mode</span></button></nav>
   </header>
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-meta"><span><i class="live-dot"></i> VIDEO EDITING & MOTION DESIGN</span><span class="edition">PORTFOLIO / VOL. 01 — 2026</span></div>
       <h1 id="hero-title">Every frame.<br><span class="second-line">A little <em>feeling.</em><span class="asterisk" aria-hidden="true">✳</span></span></h1>
-      <div class="hero-bottom"><p>Moving images. Lasting impressions.<br>Editing, motion & a different way of seeing.</p><a class="round-link" href="#work"><span>EXPLORE THE WORK</span><span class="round-arrow" aria-hidden="true">↘</span></a></div>
+      <div class="hero-bottom"><p>Moving images. Lasting impressions.<br>Editing, motion & a different way of seeing.</p><a class="round-link" href="#work"><span>EXPLORE THE WORK</span><span class="round-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6 18 18M7 18h11V7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
       <button class="reel media-trigger" data-reel aria-label="Play demonstration reel">
         <img class="reel-image" src="./assets/hero.jpg" alt="" width="1600" height="800" fetchpriority="high">
-        <span class="reel-shade"></span><span class="viewfinder corner-tl" aria-hidden="true"></span><span class="viewfinder corner-tr" aria-hidden="true"></span><span class="viewfinder corner-bl" aria-hidden="true"></span><span class="viewfinder corner-br" aria-hidden="true"></span>
+        <span class="reel-shade"></span><span class="reel-coordinate" aria-hidden="true">DEPTH / 001<br>SCROLL TO SHIFT</span><span class="viewfinder corner-tl" aria-hidden="true"></span><span class="viewfinder corner-tr" aria-hidden="true"></span><span class="viewfinder corner-bl" aria-hidden="true"></span><span class="viewfinder corner-br" aria-hidden="true"></span>
         <span class="reel-top"><span><i class="rec-dot"></i> DEMO REEL</span><span>16:9 / SOUND ON PLAY</span></span>
-        <span class="reel-title">A different<br><em>perspective.</em></span><span class="play-disc" aria-hidden="true">▶</span>
+        <span class="reel-title"><span class="reel-title-inner">A different<br><em>perspective.</em></span></span><span class="play-disc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 5 12 7-12 7Z" fill="currentColor"/></svg></span>
         <span class="reel-bottom"><span>PLACEHOLDER FOOTAGE · NOT ORIGINAL WORK</span><span>PRESS PLAY ↗</span></span>
       </button>
       <div class="reel-caption"><span>01 / THE OPENING FRAME</span><span>SCROLL TO FIND YOUR NEXT FAVORITE FRAME ↓</span></div>
     </section>
-    <div class="ticker" aria-hidden="true"><div>EDITING <b>✳</b> MOTION DESIGN <b>✳</b> CGI <b>✳</b> VISUAL STORYTELLING <b>✳</b> EDITING <b>✳</b> MOTION DESIGN <b>✳</b> CGI <b>✳</b> VISUAL STORYTELLING <b>✳</b></div></div>
+    <div class="ticker-wrap"><div class="ticker" aria-hidden="true"><div>EDITING <b>✳</b> MOTION DESIGN <b>✳</b> CGI <b>✳</b> VISUAL STORYTELLING <b>✳</b> EDITING <b>✳</b> MOTION DESIGN <b>✳</b> CGI <b>✳</b> VISUAL STORYTELLING <b>✳</b></div></div></div>
     <section class="work section-pad" id="work" aria-labelledby="work-title">
       <div class="section-kicker"><span>01 — THE WORK</span><span>AN EXPLORATION IN SIX DIRECTIONS</span></div>
       <div class="section-heading"><h2 id="work-title">Less ordinary.<br><em>More memorable.</em></h2><p>From the first cut to the final detail.<br>Explore the different sides of motion.</p></div>
@@ -43,9 +60,9 @@
     </section>
     <section class="about section-pad" id="about" aria-labelledby="about-title">
       <div class="section-kicker"><span>02 — THE APPROACH</span><span>CRAFT OVER NOISE</span></div>
-      <div class="about-layout"><div class="about-visual" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><span class="about-star">✳</span><span class="visual-label">A LITTLE INTENTION.<br>A LOT OF FEELING.</span><span class="visual-number">F / 01</span></div><div class="about-copy"><h2 id="about-title">The cut matters.<br><em>The feeling stays.</em></h2><p>Good motion has a rhythm. A pause that holds your attention. A transition that feels inevitable. A detail you notice on the second watch.</p><p>This portfolio is built around that idea: make every frame earn its place.</p><div class="approach-tags"><span>01 / EDIT</span><span>02 / EXPERIMENT</span><span>03 / REFINE</span></div></div></div>
+      <div class="about-layout"><div class="about-visual" aria-hidden="true"><svg class="about-artwork" viewBox="0 0 480 420" aria-hidden="true" focusable="false"><g class="orbital-system" fill="none" stroke="currentColor" stroke-width="1.2"><ellipse cx="240" cy="210" rx="174" ry="117"/><ellipse cx="240" cy="210" rx="174" ry="83" transform="rotate(58 240 210)"/><ellipse cx="240" cy="210" rx="174" ry="93" transform="rotate(-58 240 210)"/></g><g class="about-emblem" fill="none" stroke="currentColor" stroke-width="8"><path d="M240 135v150M165 210h150M187 157l106 106M187 263l106-106"/></g></svg><span class="visual-label">A LITTLE INTENTION.<br>A LOT OF FEELING.</span><span class="visual-number">F / 01</span></div><div class="about-copy"><h2 id="about-title">The cut matters.<br><em>The feeling stays.</em></h2><p>Good motion has a rhythm. A pause that holds your attention. A transition that feels inevitable. A detail you notice on the second watch.</p><p>This portfolio is built around that idea: make every frame earn its place.</p><div class="approach-tags"><span>01 / EDIT</span><span>02 / EXPERIMENT</span><span>03 / REFINE</span></div></div></div>
     </section>
-    <section class="contact section-pad" id="contact" aria-labelledby="contact-title"><div class="section-kicker"><span>03 — THE NEXT FRAME</span><span>GOOD THINGS START WITH A CONVERSATION</span></div><h2 id="contact-title">Have a story?<br><em>Let’s move it.</em><span aria-hidden="true">↗</span></h2><div class="contact-bottom"><p>A new idea. An unfinished edit. A bold direction.<br>There’s always a next frame.</p><button id="contact-button" class="contact-button">LET’S MAKE SOMETHING <span>↗</span></button></div><p class="contact-note" id="contact-note">Preview mode — contact details will be added before launch.</p></section>
+    <section class="contact section-pad" id="contact" aria-labelledby="contact-title"><div class="section-kicker"><span>03 — THE NEXT FRAME</span><span>GOOD THINGS START WITH A CONVERSATION</span></div><h2 id="contact-title">Have a story?<br><em>Let’s move it.</em><span aria-hidden="true">↗</span></h2><div class="contact-bottom"><p>A new idea. An unfinished edit. A bold direction.<br>There’s always a next frame.</p><button id="contact-button" class="contact-button"><span>LET’S MAKE SOMETHING</span><span>↗</span></button></div><p class="contact-note" id="contact-note">Preview mode — contact details will be added before launch.</p></section>
   </main>
   <footer><a class="footer-logo" href="#top">FRAME BY FRAME<span>© <span id="year">2026</span></span></a><span>INDEPENDENT IN SPIRIT. FRAME BY FRAME.</span><div><button id="motion-toggle" aria-pressed="false">MOTION: ON</button><a href="#top">BACK TO TOP ↑</a></div></footer>
   <dialog id="project-dialog" aria-labelledby="dialog-title"><button class="close-dialog" aria-label="Close project">CLOSE ✕</button><div class="dialog-kicker" id="dialog-category"></div><h2 id="dialog-title"></h2><video id="project-video" controls playsinline preload="none"></video><p id="video-fallback" hidden>The preview couldn’t load. <a id="video-direct" href="#" target="_blank" rel="noopener">Open the sample video directly ↗</a></p><p id="dialog-description"></p><p class="video-credit" id="video-credit"></p><div class="dialog-bottom"><span>DEMONSTRATION MEDIA · NOT ORIGINAL PORTFOLIO WORK</span><button id="next-project">NEXT PREVIEW ↗</button></div></dialog>
