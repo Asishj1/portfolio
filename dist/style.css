@@ -186,3 +186,6 @@ body{overflow-x:clip;background:radial-gradient(ellipse at 85% 10%,#dce5c655,tra
 
 /* Color separation is applied after the smear so subsequent blur cannot wash it out. */
 .header-blur .header-chroma{-webkit-backdrop-filter:url(#header-chromatic);backdrop-filter:url(#header-chromatic);-webkit-mask-image:none;mask-image:none}
+
+/* Two equal, non-shrinking repeats keep the marquee filled through its loop boundary. */
+.ticker-track{display:flex;width:max-content;min-width:200%;gap:0}.ticker-group{display:flex;align-items:center;flex:0 0 auto;justify-content:space-around;min-width:100vw;white-space:pre}.ticker-group b{flex:none}
