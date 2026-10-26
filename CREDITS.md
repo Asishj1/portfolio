@@ -23,3 +23,7 @@ Unsplash demonstration photos. Source image identifiers are retained here; no ph
 ## Typography and graphics
 
 DM Sans and IBM Plex Mono from Google Fonts; system Georgia for the italic display face. The working wordmark, favicon, grain texture, circular form study, and SaaS interface sketch are illustrative site graphics, not claims of completed client work.
+
+The film grain PNG is a procedurally generated seeded grayscale noise tile authored for this website.
+
+Lens displacement PNG maps and the centered SVG arrows are procedural/code-native graphics authored for this website.
